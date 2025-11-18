@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>De Raíz - Cambios para mi evolución</title>
+    <title>DE RAÍZ - Cambios para mi evolución</title>
     <style>
         :root {
             --primary: #2E8B57;
@@ -12,8 +12,6 @@
             --light: #F5F5F5;
             --dark: #333333;
             --gray: #777777;
-            --shadow: 0 5px 15px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
         }
         
         * {
@@ -27,7 +25,6 @@
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
-            overflow-x: hidden;
         }
         
         .container {
@@ -39,11 +36,10 @@
         
         header {
             background-color: white;
-            box-shadow: var(--shadow);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
-            transition: var(--transition);
         }
         
         .navbar {
@@ -72,27 +68,11 @@
             text-decoration: none;
             color: var(--dark);
             font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--primary);
-            transition: var(--transition);
+            transition: color 0.3s;
         }
         
         .nav-links a:hover {
             color: var(--primary);
-        }
-        
-        .nav-links a:hover:after {
-            width: 100%;
         }
         
         .btn {
@@ -103,17 +83,13 @@
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            transition: var(--transition);
+            transition: background-color 0.3s;
             border: none;
             cursor: pointer;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
         .btn:hover {
             background-color: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
         }
         
         .btn-accent {
@@ -129,42 +105,17 @@
             color: white;
             padding: 100px 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,138.7C672,139,768,181,864,197.3C960,213,1056,203,1152,186.7C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
         }
         
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
         }
         
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-        
-        .hero .btn {
-            animation: fadeInUp 1s ease 0.4s both;
         }
         
         .services {
@@ -181,25 +132,12 @@
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            width: 70px;
-            height: 3px;
-            background-color: var(--accent);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
         }
         
         .section-title p {
             color: var(--gray);
             max-width: 600px;
-            margin: 20px auto 0;
+            margin: 0 auto;
         }
         
         .services-grid {
@@ -212,45 +150,12 @@
             background-color: var(--light);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .service-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
-            z-index: -1;
-            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        .service-card:hover:before {
-            height: 100%;
-        }
-        
-        .service-card:hover .service-header,
-        .service-card:hover .service-body {
-            color: white;
-        }
-        
-        .service-card:hover .service-body li:before {
-            color: white;
-        }
-        
-        .service-card:hover .btn {
-            background-color: white;
-            color: var(--primary);
         }
         
         .service-header {
@@ -258,7 +163,6 @@
             color: white;
             padding: 20px;
             text-align: center;
-            transition: var(--transition);
         }
         
         .service-price {
@@ -269,7 +173,6 @@
         
         .service-body {
             padding: 30px;
-            transition: var(--transition);
         }
         
         .service-body ul {
@@ -289,7 +192,6 @@
             position: absolute;
             left: 0;
             font-weight: bold;
-            transition: var(--transition);
         }
         
         .about {
@@ -308,18 +210,6 @@
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .about-text h2:after {
-            content: '';
-            position: absolute;
-            width: 70px;
-            height: 3px;
-            background-color: var(--accent);
-            bottom: -10px;
-            left: 0;
         }
         
         .about-text p {
@@ -327,55 +217,16 @@
             color: var(--gray);
         }
         
-        .locations {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            margin-top: 20px;
-        }
-        
-        .locations h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .locations ul {
-            list-style: none;
-        }
-        
-        .locations li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .locations li:before {
-            content: "📍";
-            position: absolute;
-            left: 0;
-        }
-        
         .about-image {
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .about-image:hover {
-            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .about-image img {
             width: 100%;
             height: auto;
             display: block;
-            transition: var(--transition);
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.05);
         }
         
         .contact {
@@ -386,10 +237,6 @@
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
-            background-color: var(--light);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
         }
         
         .form-group {
@@ -408,38 +255,11 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
-            transition: var(--transition);
-        }
-        
-        .form-control:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(46, 139, 87, 0.2);
-            outline: none;
         }
         
         textarea.form-control {
             min-height: 150px;
             resize: vertical;
-        }
-        
-        .form-message {
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
-            text-align: center;
-            display: none;
-        }
-        
-        .form-message.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .form-message.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
         }
         
         footer {
@@ -466,12 +286,10 @@
             margin-bottom: 10px;
             display: block;
             text-decoration: none;
-            transition: var(--transition);
         }
         
         .footer-column a:hover {
             color: white;
-            transform: translateX(5px);
         }
         
         .copyright {
@@ -482,95 +300,18 @@
             font-size: 0.9rem;
         }
         
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            background: none;
-            border: none;
-            width: 30px;
-            height: 20px;
-            position: relative;
-        }
-        
-        .hamburger span {
-            display: block;
-            position: absolute;
-            height: 3px;
-            width: 100%;
-            background: var(--dark);
-            border-radius: 3px;
-            opacity: 1;
-            left: 0;
-            transform: rotate(0deg);
-            transition: .25s ease-in-out;
-        }
-        
-        .hamburger span:nth-child(1) {
-            top: 0px;
-        }
-        
-        .hamburger span:nth-child(2) {
-            top: 8px;
-        }
-        
-        .hamburger span:nth-child(3) {
-            top: 16px;
-        }
-        
-        .hamburger.active span:nth-child(1) {
-            top: 8px;
-            transform: rotate(135deg);
-        }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-            left: -60px;
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            top: 8px;
-            transform: rotate(-135deg);
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
         @media (max-width: 768px) {
             .navbar {
-                flex-direction: row;
-            }
-            
-            .hamburger {
-                display: block;
+                flex-direction: column;
             }
             
             .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                flex-direction: column;
-                background-color: white;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-                padding: 20px 0;
-            }
-            
-            .nav-links.active {
-                left: 0;
+                margin-top: 20px;
             }
             
             .nav-links li {
-                margin: 15px 0;
+                margin-left: 15px;
+                margin-right: 15px;
             }
             
             .hero h1 {
@@ -580,10 +321,6 @@
             .about-content {
                 grid-template-columns: 1fr;
             }
-            
-            .contact-form {
-                padding: 20px;
-            }
         }
     </style>
 </head>
@@ -591,18 +328,13 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <div class="logo">De Raíz</div>
+                <div class="logo">NutriDeportiva</div>
                 <ul class="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#sobre-mi">Sobre Mí</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
-                <button class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
                 <a href="#contacto" class="btn">Reserva tu Consulta</a>
             </nav>
         </div>
@@ -610,11 +342,9 @@
 
     <section class="hero" id="inicio">
         <div class="container">
-            <div class="hero-content">
-                <h1>De Raíz - Cambios para mi evolución</h1>
-                <p>Nutricionista Deportivo Francisco Carreño - Planificación nutricional personalizada para alcanzar tus metas deportivas y mejorar tu composición corporal</p>
-                <a href="#servicios" class="btn btn-accent">Ver Servicios</a>
-            </div>
+            <h1>Optimiza tu Rendimiento con Nutrición Deportiva Especializada</h1>
+            <p>Planificación nutricional personalizada para alcanzar tus metas deportivas y mejorar tu composición corporal</p>
+            <a href="#servicios" class="btn btn-accent">Ver Servicios</a>
         </div>
     </section>
 
@@ -690,23 +420,13 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>Sobre Mí</h2>
-                    <p>Soy <strong>Francisco Carreño</strong>, nutricionista especializado en deporte con 19 años de experiencia deportiva y alto rendimiento, experiencia y estudios aplicados para alcanzar tus metas.</p>
+                    <p>Soy nutricionista especializado en deporte con 19 años de experiencia deportiva y alto rendimiento, experiencia y estudios aplicados para alcanzar tus metas.</p>
                     <p>Mi enfoque se basa en la evidencia científica más actualizada, combinada con un abordaje personalizado que considera tus objetivos, preferencias alimentarias y estilo de vida.</p>
                     <p>Trabajo con deportistas de diversas disciplinas: running, crossfit, fútbol, natación, ciclismo y deportes de fuerza.</p>
-                    
-                    <div class="locations">
-                        <h3>Atención Presencial</h3>
-                        <ul>
-                            <li>Concepción</li>
-                            <li>Los Ángeles</li>
-                            <li>Santiago de Chile</li>
-                        </ul>
-                    </div>
-                    
                     <a href="#contacto" class="btn">Contáctame</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Nutricionista deportivo Francisco Carreño">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Nutricionista deportiva">
                 </div>
             </div>
         </div>
@@ -750,19 +470,9 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="location">Ubicación (si es presencial)</label>
-                        <select id="location" class="form-control">
-                            <option value="">Selecciona ubicación</option>
-                            <option value="concepcion">Concepción</option>
-                            <option value="los-angeles">Los Ángeles</option>
-                            <option value="santiago">Santiago de Chile</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label for="message">Mensaje (Opcional)</label>
                         <textarea id="message" class="form-control" placeholder="Cuéntame sobre tus objetivos deportivos..."></textarea>
                     </div>
-                    <div id="formMessage" class="form-message"></div>
                     <button type="submit" class="btn" style="width: 100%;">Enviar Solicitud</button>
                 </form>
             </div>
@@ -774,7 +484,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Francisco Carreño</h3>
-                    <p>Nutricionista Deportivo especializado en optimizar el rendimiento y la composición corporal con un enfoque personalizado.</p>
+                    <p>Especialista en nutrición deportiva con enfoque personalizado para optimizar el rendimiento y la composición corporal.</p>
                 </div>
                 <div class="footer-column">
                     <h3>Servicios</h3>
@@ -787,113 +497,28 @@
                     <p>Email: pautas.carreno.nutdep@gmail.com</p>
                     <p>Teléfono: +56 979867884</p>
                     <p>Modalidad: Online y Presencial</p>
-                    <p>Ubicaciones: Concepción, Los Ángeles, Santiago</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 De Raíz - Cambios para mi evolución. Todos los derechos reservados.</p>
+                <p>&copy; 2023 Carreno.nutdep. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Navegación suave
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
-                
-                // Cerrar menú móvil si está abierto
-                if (navLinks.classList.contains('active')) {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                }
             });
         });
 
-        // Menú hamburguesa
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Formulario de contacto
-        const contactForm = document.getElementById('contactForm');
-        const formMessage = document.getElementById('formMessage');
-        const modalitySelect = document.getElementById('modality');
-        const locationSelect = document.getElementById('location');
-        
-        // Mostrar/ocultar selector de ubicación según modalidad
-        modalitySelect.addEventListener('change', function() {
-            if (this.value === 'presencial') {
-                locationSelect.parentElement.style.display = 'block';
-                locationSelect.required = true;
-            } else {
-                locationSelect.parentElement.style.display = 'none';
-                locationSelect.required = false;
-            }
-        });
-        
-        contactForm.addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Validación básica
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('service').value;
-            const modality = document.getElementById('modality').value;
-            
-            if (!name || !email || !service || !modality) {
-                formMessage.textContent = 'Por favor, completa todos los campos obligatorios.';
-                formMessage.className = 'form-message error';
-                formMessage.style.display = 'block';
-                return;
-            }
-            
-            // Validación adicional para modalidad presencial
-            if (modality === 'presencial' && !locationSelect.value) {
-                formMessage.textContent = 'Por favor, selecciona una ubicación para la consulta presencial.';
-                formMessage.className = 'form-message error';
-                formMessage.style.display = 'block';
-                return;
-            }
-            
-            // Simular envío exitoso
-            formMessage.textContent = '¡Gracias por tu interés! Me pondré en contacto contigo pronto para coordinar tu consulta.';
-            formMessage.className = 'form-message success';
-            formMessage.style.display = 'block';
-            
-            // Resetear formulario después de 3 segundos
-            setTimeout(() => {
-                contactForm.reset();
-                formMessage.style.display = 'none';
-                locationSelect.parentElement.style.display = 'none';
-            }, 5000);
-        });
-
-        // Animación de elementos al hacer scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 1s ease forwards';
-                }
-            });
-        }, observerOptions);
-
-        // Observar elementos para animación
-        document.querySelectorAll('.service-card, .about-text, .about-image').forEach(el => {
-            el.style.opacity = '0';
-            observer.observe(el);
+            alert('¡Gracias por tu interés! Me pondré en contacto contigo pronto para coordinar tu consulta.');
+            this.reset();
         });
     </script>
 </body>
